@@ -13,7 +13,7 @@
     background-position: 0 0;
 }
 
-.info {
+#info {
     margin: 0 auto;
     width: 247px;
     height: 30px;
@@ -54,6 +54,6 @@
 .btn_mask {
     background: rgba(51, 122, 183, 0.5);
     transform: scale(1.0);
-    transform-origin: center center;
+    transform-origin: center center;/*变形的基点在中心*/
     transition: all .1s;
 }

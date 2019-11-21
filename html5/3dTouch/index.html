@@ -11,16 +11,17 @@
 
 <body>
     <div class="sloth" id="sloth"></div>
-    <p class="" id="info">FORCE: <span class="" id="force_val">0</span></p>
+    <p class="" id="info">force: <span class="" id="force_val">0</span></p>
     <div class="btn_wrap">
-        <div class="btn_mask" id="Btn_mask"></div>
+        <div class="btn_mask" id="btn_mask"></div>
         <div class="force_btn" id="force_btn"></div>
     </div>
     <script>
         let i = 0;
         j = 0;
-        const sloth=document.getElementById('sloth');
-        musk=document.getElementById('btn_musk');
+      const sloth = 
+        document.getElementById('sloth'),
+        mask = document.getElementById('btn_mask');
         setInterval(() => {
             if (j >= 6) {
                 i = 0;
@@ -33,10 +34,11 @@
                 i++;
             }
             // console.log(i, j);
-            
-            sloth.style.backgroundPosition = `-${i*247}px -${j*194}px`;
-            musk.style.transform=`scale(${((j*4+i)/24)*1.7})`
+            sloth
+            .style.backgroundPosition = `-${i*247}px -${j*194}px`;
+            mask.style.transform = `scale(${((j*4+i)/24)*1.7})`
         }, 100)
+
 
 
     </script>
