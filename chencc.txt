@@ -1,0 +1,6 @@
+新建了一个自己的开发分支，日常开发都应该在这个分支上，不影响别人，
+等开发完成之后，再将代码合并到master分支。
+git branch chencc 建立分支chencc
+git checkout chencc 切换到分区chencc
+
+bug fixed
