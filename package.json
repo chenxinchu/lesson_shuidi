@@ -1,0 +1,25 @@
+{
+  "name": "lesson_shuidi",
+  "version": "1.0.0",
+  "description": "- 前端\r   CSS+JS+ES+VUE+REACT PC站 + Mobile + APP\r - 后端\r   NODE+GO\r - 名企就业能力课\r   Linux + leetcode + 设计模式 + 网络",
+  "main": "index.js",
+  "dependencies": {
+    "request-promise": "^4.2.5",
+    "vant-weapp": "^0.5.23"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenxinchu/lesson_shuidi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenxinchu/lesson_shuidi/issues"
+  },
+  "homepage": "https://github.com/chenxinchu/lesson_shuidi#readme"
+}
