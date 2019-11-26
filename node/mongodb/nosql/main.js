@@ -31,8 +31,6 @@ app.get('/', (req, res) => {
             }, function (err, data) {
                 res.end(data);
             })
-
-
         })
 })
 app.listen(1314);
