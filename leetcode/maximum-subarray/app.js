@@ -18,6 +18,7 @@
 // console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
 
 //o(n2)->o(n)
+
 function maxSubArray(nums){
     var max = -Number.MAX_VALUE;
     var sum = 0;
