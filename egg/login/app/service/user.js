@@ -9,7 +9,7 @@ class UserService extends Service {
         user.password = crypto.createHmac('sha256', 'cxk1516cn')
             .update(user.password)
             .digest('hex');
-        user.user_id = uuid.v4().replace(/-/g,'');
+        // user.user_id = uuid.v4().replace(/-/g,'');
         const userInfo = await this.ctx.model.User.create(user);
         ctx.body = {
             mag: '注册成功',
