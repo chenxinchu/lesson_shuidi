@@ -4,6 +4,7 @@
   "description": "- 前端\r   CSS+JS+ES+VUE+REACT PC站 + Mobile + APP\r - 后端\r   NODE+GO\r - 名企就业能力课\r   Linux + leetcode + 设计模式 + 网络",
   "main": "index.js",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "request-promise": "^4.2.5",
     "vant-weapp": "^0.5.23"
   },
