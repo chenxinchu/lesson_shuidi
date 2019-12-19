@@ -8,5 +8,6 @@ var foo = {
 }
 foo.bar();
 
-const bar1 = foo.bar;
-console.log(bar1);
+// const bar1 = foo.bar;
+// console.log(bar1);
+

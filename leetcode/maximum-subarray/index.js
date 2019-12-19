@@ -1,7 +1,7 @@
 function maxSubArray(nums){
     let thissum,maxsum=-Number.MAX_VALUE;
     for (let i = 0; i < nums.length; i++) {
-        for(let j=i;j<nums.length; j++) {
+        for(let j=nums.length;j>=0; j--) {
             // 每一趟的和是
             thissum=0;
             for(let k=i;k<=j;k++){
