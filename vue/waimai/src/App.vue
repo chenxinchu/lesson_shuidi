@@ -53,6 +53,9 @@ export default {
   margin 0
   padding 0
 
+// #app
+//   background-color red
+
 .tab
   display flex
   width 100%
