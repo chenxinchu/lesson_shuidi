@@ -1,0 +1,25 @@
+{
+  "name": "dockerstudy",
+  "version": "1.0.0",
+  "description": "- Koa 是最流行的node轻量级框架    egg.js 基于Koa的二次开发 - Koa new -> app -> listen   /bin/www    www文件 就是网站项目的启动文件   http.createServer(app.callback()) - 模版   views   koa-views()    app.use() 启用views中间件   模版在哪里 使用哪种模版引擎(pug) - 设置路由router",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon bin/www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.1",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.1",
+    "logger": "0.0.1",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {}
+}
