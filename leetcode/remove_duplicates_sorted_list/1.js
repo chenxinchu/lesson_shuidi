@@ -11,4 +11,4 @@ var removeDuplisctes = function (num) {
     return slowP + 1;
 }
 
-console.log(removeDuplisctes([0, 0, 1, 1, 2, 2, 2, 3, 3, 4]));
+console.log(removeDuplisctes([1,1,2]));
