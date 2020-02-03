@@ -1,0 +1,12 @@
+{
+  "name": "big_file_upload",
+  "version": "1.0.0",
+  "description": "1. http发送请求，分成n个切片并发上传",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
