@@ -1,35 +1,42 @@
 <template>
-<div class="index">
+  <div class="index">
     <div class="search">
       <div @click="toMappage">{{cityName}}</div>
       <div @click="toSearch">
-        <input type="text" placeholder="搜索商品">
+        <input type="text" placeholder="搜索商品" />
         <span class="icon"></span>
       </div>
-      <div class="swiper">
-        <swiper class="swiper-container" indicator-dots="true" autoplay ="true" interval="3000" circular="true" duration="500">
-          <block v-for="(item, index) in banner" :key="index">
-            <swiper-item class="swiper-item">
-              <image class="slide-image" :src ="item.image_url"></image>
-            </swiper-item>
-          </block>
-        </swiper>
-      </div>
     </div>
-</div>
+    <div class="swiper">
+      <swiper
+        class="swiper-container"
+        indicator-dots="true"
+        autoplay="true"
+        interval="3000"
+        circular="true"
+        duration="500"
+      >
+        <block v-for="(item, index) in banner" :key="index">
+          <swiper-item class="swiper-item">
+            <image class="slide-image" :src="item.image_url" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </div>
+  </div>
 </template>
 
 <script>
 import amapFile from "../../utils/amap-wx.js";
 import { mapState, mapMutations } from "vuex";
-import {get} from '../../utils'
+import { get } from "../../utils";
 export default {
-  data () {
+  data() {
     return {
-        banner: []
-      }
-    },
-    computed: {
+      banner: []
+    };
+  },
+  computed: {
     ...mapState(["cityName"])
   },
   methods: {
@@ -57,17 +64,17 @@ export default {
     getCityName() {
       var _this = this;
       var myAmapFun = new amapFile.AMapWX({
-        key: "e545e7f79a643f23aef187add14e4548"
+        key: "021e8f9cf4fce006649f0aa40c312443"
       });
       myAmapFun.getRegeo({
-        success: function (data) {
+        success: function(data) {
           //成功回调
           console.log(data);
           // data[0].regeocodeData.formatted_address
           // _this.cityName = data[0].regeocodeData.formatted_address;
           _this.update({ cityName: data[0].regeocodeData.formatted_address });
         },
-        fail: function (info) {
+        fail: function(info) {
           //失败回调
           console.log(info);
           //如果用户拒绝授权
@@ -77,20 +84,19 @@ export default {
         }
       });
     },
-    async getDate(){
-      const data = await get('/index/index')// 后端接口
+    async getDate() {
+      const data = await get("/index/index"); // 后端接口
       console.log(data);
     },
     toSearch() {
       wx.navigateTo({
         url: "/pages/search/main"
       });
-    },
+    }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
 @import "./style.less";
-
 </style>

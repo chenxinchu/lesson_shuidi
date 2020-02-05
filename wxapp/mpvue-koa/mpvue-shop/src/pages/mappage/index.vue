@@ -47,7 +47,7 @@ export default {
     getMapaddress() {
       let _this = this;
       var myAmapFun = new amapFile.AMapWX({
-        key: "e545e7f79a643f23aef187add14e4548"
+        key: "021e8f9cf4fce006649f0aa40c312443"
       })
        myAmapFun.getRegeo({
         iconPath: "/static/images/marker.png",
@@ -76,16 +76,16 @@ export default {
     },
     bindInput(e) {
         // console.log(e);
-        let _this = this
-        let keywords = _this.keywords
+        let _this = this;
+        let keywords = _this.keywords;
         var myAmapFun = new amapFile.AMapWX({
-        key: "e545e7f79a643f23aef187add14e4548"
+        key: "021e8f9cf4fce006649f0aa40c312443"
       });
-      myAmapFun.getInputtips({//搜索补全
+      myAmapFun.getInputtips({ // 搜索补全
         keywords: keywords,
         location: "",
         success: function (data) {
-        //   console.log(data);
+        //   console.log(data); 
 
           if (data && data.tips) {
             _this.tips = data.tips;
