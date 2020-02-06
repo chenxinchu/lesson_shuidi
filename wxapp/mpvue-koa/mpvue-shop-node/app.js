@@ -1,13 +1,11 @@
 const Koa= require('koa');
-const Router = require('koa-router');
-const config = require('./config')
+const config = require('./config');
+const router =require('./routers');
 
 const app = new Koa();
-const router = new Router();
 
-router.get('/index',(ctx,next)=>{
-  ctx.body='HelloWorld';
-})
+
+
 
 app.use(router.routes());
 
