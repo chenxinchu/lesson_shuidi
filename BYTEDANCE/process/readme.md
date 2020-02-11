@@ -14,3 +14,13 @@
   js 在服务器端执行也是单线程的  
   node是服务器端js执行的 容器 node 是多进程的 node10是多线程  
   单线程 异步 IO 高性能高并发  
+
+  node.js 容器node 高并发 异步无阻塞 
+  创建进程、线程 
+
+
+- 进程的两种方式 
+  child_process  fork  web worker
+  cluster  fork  
+  提升运行效率 把cpu  
+  nginx 负载均衡  
