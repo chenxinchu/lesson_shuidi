@@ -7,9 +7,9 @@ class Wallet {
     // replace 功能OK?  /-/g  ""
     // js 对private支持不太好， 编程的约定来做 
     // _id  不可以改的
-    this._id = UUID.v1().replace(/-/g, ""); 
+    this._id = UUID.v1().replace(/-/g, "");
     this._createTime = + new Date(); // 时间微秒数
-    this._balance =  0 // 金额 初始值 
+    this._balance = 0 // 金额 初始值 
     this._balanceLastModifiedTime = +new Date(); //上一次金额修改时间
     // console.log(this._createTime);
     //uuid 返回用户id 唯一的 加密生成的 后端开发中  
@@ -17,8 +17,8 @@ class Wallet {
     // console.log(this.id);
   }
   // 可读不可写
-  getId () {
-    return this._id
+  getId() {
+    return this._id;
   }
   getBalance() {
     return this._balance; //便于存储 long int 
@@ -35,7 +35,7 @@ class Wallet {
     // 封装
     if (increasedAmount < 0) {
       throw new Error('错误的金额')
-    } 
+    }
     this._balance += increasedAmount;
     this._balanceLastModifiedTime = + new Date();
   }
