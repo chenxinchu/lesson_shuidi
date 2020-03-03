@@ -1,11 +1,22 @@
-const express = require('express');
-const app = express();
+/**
+ * API 定义集合文件
+ * @param {*} data 
+ */
 
-// 路由的模块化
-const router = require('./routes/index.js');
-router(app);
-
-// app.use()
-app.listen("3000", () => {
-  console.log('api 服务器上线了');
-})
+// 登录
+export const login = async(data) => {
+    return new Promise((resolve, reject) => {
+        fetch('/admin/login', {
+                method: 'POST',
+                body: JSON.stringify(data) // 转成
+            })
+            .then(data => data.json()) // 从数据流中取出数据s
+            .then(data => {
+                resolve(data)
+            })
+            .catch(err => {
+                console.log(err)
+                reject(err)
+            })
+    })
+}
