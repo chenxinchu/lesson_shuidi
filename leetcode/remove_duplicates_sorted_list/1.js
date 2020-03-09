@@ -1,4 +1,4 @@
-var removeDuplisctes = function (num) {
+var removeDuplicates = function (num) {
     const size = num.length;
     let slowP = 0;
     for (let fastP = 0; fastP < size; fastP++) {
@@ -11,4 +11,4 @@ var removeDuplisctes = function (num) {
     return slowP + 1;
 }
 
-console.log(removeDuplisctes([1,1,2]));
+console.log(removeDuplicates([1,1,2]));

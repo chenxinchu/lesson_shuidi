@@ -22,5 +22,5 @@ const n3 = new ListNode(2);
 n1.next = n2;
 n2.next = n3;
 // console.log(n1);
-console.log(removeDuplisctes(n1));
+console.log(removeDuplicates(n1));
 
