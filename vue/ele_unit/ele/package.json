@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@chen_cc/cc-ui": "^0.1.1",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5"

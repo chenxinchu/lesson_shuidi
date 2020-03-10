@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <router-view/>
     <!-- <Footer></Footer> -->
+    <x-button type="primary">button</x-button>
   </div>
 </template>
 
