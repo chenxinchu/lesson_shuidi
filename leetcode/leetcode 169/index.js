@@ -12,6 +12,6 @@ var majorityElement = function(nums) {
 		}
 	}
 	return maj
-};
-console.log(majorityElement([2,3,3]));
+}
+console.log(majorityElement([2,3,3]))
 
