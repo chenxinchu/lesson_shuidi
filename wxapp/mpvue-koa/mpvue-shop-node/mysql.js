@@ -1,7 +1,7 @@
-// 获取基础配置 
+// 获取基础配置
 const configs = require('./config')
 
-var knex = require('knex')({
+var knex = require('knex') ({
   client: 'mysql',
   connection: {
     host: configs.mysql.host,
@@ -11,5 +11,5 @@ var knex = require('knex')({
     database: configs.mysql.db,
   }
 })
-// 将基础配置和sdk.config合并 导出初始化完成的sdk
+// 将基础配置和sdk.config 合并 导出初始化完成的sdk
 module.exports = { mysql: knex }
