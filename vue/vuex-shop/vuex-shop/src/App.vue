@@ -1,24 +1,17 @@
 <template>
   <div id="app">
-    <products />
-    <cart />
+    <products/>
+    <cart/>
+    
+    
+    <!-- {{this.$store.state.userInfo}}
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/> -->
   </div>
 </template>
-
-<script>
-import ShoppingCart from "@/components/ShoppingCart";
-import ProductList from "@/components/ProductList";
-export default {
-  components: {
-    cart: ShoppingCart,
-    products: ProductList
-  },
-  mounted() {
-    console.log(this.$store.state.products.all);
-    console.log(this.$store.state.cart);
-  }
-};
-</script>>
 
 <style>
 #app {
@@ -42,7 +35,23 @@ export default {
   color: #42b983;
 }
 
-[disabled]{
+[disabled] {
   cursor: not-allowed;
 }
 </style>
+<script>
+import ShoppingCart from '@/components/ShoppingCart';
+import ProductList from '@/components/ProductList';
+export default {
+  mounted() {
+    // 获取商品 mvvm list 展示
+    // this.dispatch('')
+    // console.log(this.$store.state.products.all);
+    // console.log(this.$store.state.cart);
+  },
+  components: {
+    'products': ProductList,
+    'cart': ShoppingCart
+  }
+}
+</script>

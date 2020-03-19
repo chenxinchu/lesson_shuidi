@@ -1,25 +1,32 @@
 <template>
   <div class="cart">
+    <!-- <hr/> -->
     <h2>Your Cart</h2>
-    <p v-show="!products.length"><i>Please add some products to cart.</i></p>
+    <!-- <div>{{this.$store.state.cart.items}}</div> -->
+    <p v-show="!products.length"><i>Please add some products to cart</i></p>
     <ul>
-      <li
+      <li 
         v-for="product in products"
         :key="product.id">
-        {{ product.title }} - {{ product.price | currency }} x {{ product.quantity }}
+        {{product.title}} - {{product.price}} x {{product.quantity}}
       </li>
     </ul>
-    <p>Total: {{ total | currency }}</p>
-    <p><button :disabled="!products.length" @click="checkout(products)">Checkout</button></p>
-    <p v-show="checkoutStatus">Checkout {{ checkoutStatus }}.</p>
+    <p>Total: {{ total }}</p>
+    <p>
+      <button :disabled="!products.length"
+       @click="checkout(products)">Checkout</button>
+    </p>
+    <p v-show="checkoutStatus">Checkout {{ checkoutStatus }}</p>
   </div>
 </template>
-
 <script>
 import { mapGetters, mapState } from 'vuex'
-
 export default {
-  computed: {
+  // 更详细的购物车商品数据
+  created() {
+    console.log(this.$store.state.cart, this.$store.state.products);
+  },
+  computed:{
     ...mapState({
       checkoutStatus: state => state.cart.checkoutStatus
     }),
@@ -29,8 +36,9 @@ export default {
     })
   },
   methods: {
-    checkout (products) {
-      this.$store.dispatch('cart/checkout', products)
+    checkout(products) {
+      // console.log(products);
+      this.$store.dispatch('cart/checkout', products);
     }
   }
 }

@@ -1,38 +1,35 @@
+// 四大家族
 import shop from '../../api/shop'
-
-// initial state
 const state = {
-  all: []
+  all: [
+   
+  ]
 }
-
-// getters
-const getters = {}
-
-// actions
-const actions = {
-  getAllProducts ({ commit }) {
-    shop.getProducts(products => {
-      commit('setProducts', products)
-    })
-  }
-}
-
-// mutations
 const mutations = {
-  setProducts (state, products) {
+  setProducts(state, products) {
     state.all = products
   },
-
-  decrementProductInventory (state, { id }) {
+  decrementProductInentory(state, { id }) {
     const product = state.all.find(product => product.id === id)
     product.inventory--
   }
 }
-
+const actions = {
+  getAllProducts({ commit }) {
+    // console.log('get products');
+    // api
+    shop
+      .getProducts(products => {
+        commit('setProducts', products)
+      })
+  }
+}
+const getters = {
+}
 export default {
-  namespaced: true,
+  namespaced: true, //命名空间
   state,
-  getters,
+  mutations,
   actions,
-  mutations
+  getters
 }
