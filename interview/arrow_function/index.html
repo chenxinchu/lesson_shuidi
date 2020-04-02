@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// 函数是js里的一等公民
+		// 在js中函数是可以当作构造函数(类)来用的
+		// 如何限制函数的调用方式只能是new，而不能直接调用
+		function Person(name) {
+			if (new.target !== undefined) { // new.target就是构造函数本身
+				this.name = name
+			} else {
+				throw new Error('必须使用new来生成实例')
+			}
+		}
+
+		Person.prototype.sayName=function(){  // 函数通过prototype来构建
+			console.log('who am i ? ' + this.name);
+			
+		}
+
+		// Person('Lee') // throw error
+		let Lee = new Person('Lee')
+		console.log(Lee.name);
+		console.log(Lee.sayName());  // 对象通过__proto__
+
+		/***************分割线***************/
+
+		// 原型链顶端是对象还是函数 -> 即是对象也是函数
+		var o = Object()
+		// console.log(o);
+		
+		console.log(o.__proto__ == Object.prototype );	  // 这里的Object表现函数属性
+
+		/***************分割线***************/
+
+		function MyObj(){}
+		typeof MyObj  // true 
+		var mo = new MyObj()
+		mo.__proto__ == MyObj.prototype
+
+
+	</script>
+</body>
+
+</html>
