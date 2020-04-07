@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		function foo() {
+			// return 'foo'
+			return new Promise((resolve)=>{
+				setTimeout(()=>{
+					resolve(123)
+				},3000)
+			})
+		}
+		function* test() {
+			console.log('start')
+			let a = yield foo()
+			console.log(a) // undefined
+			// a 和 yield 后面的值没有关系
+			// a 的值可以通过next()传递
+			// next(value) 传递的value：就是上一个yield的返回值
+			let b = yield 2
+			console.log(b)
+			console.log('end')
+		}
+		// console.log(test())
+		let g = test()
+		// console.log(g.next()) // 这里被终止
+		// // 插入新任务
+		// console.log(foo())
+		// // 启动下一步
+		// console.log(g.next('a value'))
+		// console.log(g.next('b value'))
+
+		// 协程
+		function generatorAutoRun(gen) {
+			let g = gen()
+			function next1(value) {
+				let res = g.next(value)
+				if (res.done == true) return
+				next1(res.value)
+			}
+			next1()
+		}
+		generatorAutoRun(test)
+	</script>
+</body>
+
+</html>
