@@ -1,6 +1,5 @@
 - resource:
-- paint
-:
+- paint:
 	- FP: 第一个像素落地
 	- FCP: first-contentful-paint
 	- FMP: first-meaningful-paint
