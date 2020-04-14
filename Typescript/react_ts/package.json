@@ -1,11 +1,11 @@
 {
   "name": "react_ts",
   "version": "1.0.0",
-  "description": "一周后， 徐琪等简历 阿里\r react + ts 是必问",
+  "description": "react + ts 是必问的",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --inline --hot --open",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --mode development  --inline  --hot --open",
+    "build": "webpack  --mode production"
   },
   "keywords": [],
   "author": "",
