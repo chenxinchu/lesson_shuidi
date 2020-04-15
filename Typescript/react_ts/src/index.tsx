@@ -8,10 +8,10 @@ import * as ReactDOM from 'react-dom'; // dom 挂载
 // index ->  index.tsx  入口文件里就使用 jsx语法
 
 // import { HelloComponent } from './hello'; //
-import { AppRouter } from './router'
+import { AppRouter } from './router';
+
 // console.log(HelloComponent);
 ReactDOM.render(
-  // <HelloComponent />,
-  <AppRouter />
+  <AppRouter />,
   document.getElementById('root')
 )
