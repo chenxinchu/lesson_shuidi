@@ -1,9 +1,12 @@
 import * as React from 'react';
+import { Header } from './components'
+// react 函数式组件
 
-export const App = () => {
+export const App: React.StatelessComponent<{}> = () => {
   return (
-    <div>
-      Hello World 
+    // js class 关键字
+    <div className="container-fluid">
+      <Header />
     </div>
   )
 }
