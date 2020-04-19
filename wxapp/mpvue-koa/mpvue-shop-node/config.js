@@ -5,7 +5,7 @@ const CONF = {
     port: 3306,
     user: 'root',
     db: 'nodemysql',
-    pass: 'xfwnxn1023',
+    pass: '12345678',
     char: 'utf8mb4'
   }
 }

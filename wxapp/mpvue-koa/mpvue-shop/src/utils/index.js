@@ -59,7 +59,35 @@ export function post (url, data) {
   return request(url, 'POST', data)
 }
 
+export function getStorageOpenid() {
+  const openId = wx.getStorageSync('openId')
+  if (openId) {
+    return openId
+  } else {
+    return ''
+  }
+}
+
+export function login() {
+  const userInfo = wx.getStorageSync('userInfo')
+  if (userInfo) {
+    return userInfo
+  }
+}
+export function toLogin() {
+  const userInfo = wx.getStorageSync('userInfo')
+  if (!userInfo) {
+    wx.navigateTo({
+      url: '/pages/login/main'
+    });
+  } else {
+    return true
+  }
+}
+  
+
 export default {
   formatNumber,
-  formatTime
+  formatTime,
+  getStorageOpenid
 }
