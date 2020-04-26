@@ -2,11 +2,6 @@ function ListNode(val) {
   this.val = val;
   this.next = null;
 }
-var n1 = new ListNode(1)
-var n2 = new ListNode(4)
-var n3 = new ListNode(5)
-n1.next = n2
-n2.next = n3
 
 var n1 = new ListNode(1)
 var n2 = new ListNode(4)
@@ -28,11 +23,11 @@ k1.next = k2
 var mergeKLists = function (lists) {
   if (lists.length == 0) {
     return null
-  } else if (lists.length == 1) {
+  } else if (lists.length == 1) {  // 一条链表
     return lists[0]
-  } else if (lists.length == 2) {
+  } else if (lists.length == 2) {  // 两条链表合并
     return mergeTwoLists(lists[0], lists[1])
-  } else {
+  } else { // n 条链表，把他们分为两条链表
     let middle = Math.floor(lists.length / 2)
     let left = lists.slice(0, middle)
     let right = lists.slice(middle)
