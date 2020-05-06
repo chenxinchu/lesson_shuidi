@@ -4,7 +4,7 @@ const CONF = {
     host: 'localhost',
     port: 3306,
     user: 'root',
-    db: 'nodemysql',
+    db: 'vue_nodeshop',
     pass: '12345678',
     char: 'utf8mb4'
   }
