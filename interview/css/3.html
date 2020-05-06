@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./button.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- this在js中很灵活，css那些让我们觉得很坑的东西，BFC -->
+  <button class="button">按钮</button>
+  <script>
+    // 如何做一个颜色随鼠标移动而改变颜色的button
+    document.querySelector('.button').onmousemove = (e) => {
+      const x = e.pageX - e.target.offsetLeft;
+      const y = e.pageY - e.target.offsetTop;
+      e.target.style.setProperty('--x',`${x}px`)
+      e.target.style.setProperty('--y',`${y}px`)
+    }
+  </script>
+</body>
+
+</html>
