@@ -20,7 +20,7 @@
   打开一个页面 至少有4个进程  
   <!-- 主进程 管家 chrome 浏览器， 
   子进程
-  GPU 进程 渲染进程   GPU 加速   3d 渲染  canvas three.js  css transform 3d 
+  GPU进程 渲染进程   GPU 加速   3d 渲染  canvas three.js  css transform 3d 
   NetWork Service -->
   chrome 多进程架构带来现代浏览器的快速访问体验， chrome 就是代表
   - 浏览器主进程  并发
