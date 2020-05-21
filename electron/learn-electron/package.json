@@ -1,0 +1,12 @@
+{
+  "name": "learn-electron",
+  "version": "1.0.0",
+  "description": "electron是js在exe的应用",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
