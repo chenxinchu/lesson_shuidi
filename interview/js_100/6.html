@@ -1,0 +1,92 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    new Vue({
+      el: '#root',
+      data() {
+        return {
+          arr: [1, 2, 3]
+        }
+      },
+      methods:{
+        change(){
+          // this.arr=this.arr.map((item,index)=>{
+
+          // })
+          
+        }
+      },
+      template: `<div><span @click="change" v-for="(item ,index) in arr ">{{item}}</div>`
+    })
+  </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container"></div>  
+  <!-- vue 挂载点 -->
+  <script src="vue.global.js"></script>
+  <script>
+  // console.log(Vue);
+  // vue 3.0  react 16 +  函数式编程
+  // Symbol Reflect Proxy .... 元编程 
+  // composition API
+  // react hoocks 
+  // 组件  有一些 类似hoocks的函数， 插入进去实现 数据共享
+  function usePosition() {
+    let position = Vue.reactive({x:0, y:0})
+    function update(e) {
+      console.log(e);
+      position.x = e.pageX;
+      position.y = e.pageY;
+    }
+    Vue.onMounted((e) => {
+      window.addEventListener('mousemove', update)
+    })
+    Vue.onUnmounted((e) => {
+      window.removeEventListener('mousemove', update)
+    })
+    console.log(Vue.toRefs(position))
+    return Vue.toRefs(position)
+  }
+  
+  const App = {
+    setup() { // mounted  只会执行一次
+      // vue 响应式是怎么实现的？ proxy  3.0   2.0 defineProperty 
+      // 编程的编程  元编程能力 
+      let state = Vue.reactive({arr: [1,2,3]}); // 语义化 响应式 代理 proxy 
+      // console.log(state); // Proxy 实例  
+      // console.log('----------------')
+     
+      function change() {
+        state.arr[1] = 9
+      }
+      return {
+        change,
+        state  // vue 3.0 this.state react 
+      }
+    },
+    template: `<span v-for="(item, index) in state.arr" @click="change">&nbsp;&nbsp;{{item}}&nbsp;&nbsp;</span>`
+  }
+  Vue.createApp(App).mount('#container');
+  </script>
+</body>
+</html>
